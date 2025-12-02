@@ -4,9 +4,8 @@ import java.util.Iterator;
 //Date and period: 12/1 Pd 6
 //Purpose: 
 public class SuperLinkedList extends LinkedList<String> {
-    LinkedList <E> myList = new LinkedList <E> ();
     public boolean removeVowels() {
-        Iterator <E> iter  = myList.iterator();
+        Iterator <E> iter  = this.iterator();
         boolean torf = false;
         while (iter.hasNext())
         {
@@ -20,7 +19,7 @@ public class SuperLinkedList extends LinkedList<String> {
     }
 
     public boolean removeConsonants() {
-        Iterator <E> iter  = myList.iterator();
+        Iterator <E> iter  = this.iterator();
         boolean torf = false;
         while (iter.hasNext())
         {
@@ -34,7 +33,7 @@ public class SuperLinkedList extends LinkedList<String> {
     }
 
     public LinkedList<String> removeDuplicates() {
-        Iterator <E> iter  = myList.iterator();
+        Iterator <E> iter  = this.iterator();
         LinkedList <E> a = new LinkedList <E> ();
         boolean torf;
         String variable;
@@ -54,22 +53,39 @@ public class SuperLinkedList extends LinkedList<String> {
             }
             a += last;
         }
-        iter  = myList.iterator();
+        iter  = this.iterator();
         return a;
     }
 
     public LinkedList<String> concatenateStrings() {
-        Iterator <E> iter  = myList.iterator();
-        return null;
+        Iterator <E> iter  = this.iterator();
+        LinkedList <E> a = new LinkedList <E> ();
+        String temp;
+        for(i = 0; i < this.length(); i++)
+        {
+            for(x = 0; x <= i; x++)
+            {
+                temp += iter.next();
+            }
+            a += temp;
+        }
+        return a;
     }
 
     public LinkedList<String> mix(LinkedList<String> list2) {
-        Iterator <E> iter  = myList.iterator();
-        return null;
+        Iterator <E> iter  = this.iterator();
+        Iterator <E> ator  = list2.iterator();
+        LinkedList <E> merged = new LinkedList <E> ();
+        while(iter.hasNext())
+        {
+            merged += iter.next();
+            merged += ator.next();
+        }
+        return merged;
     }
 
     public String toString() {
-        Iterator <E> iter  = myList.iterator();
+        Iterator <E> iter  = this.iterator();
         String returned;
         while(iter.hasNext())
         {
