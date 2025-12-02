@@ -5,11 +5,11 @@ import java.util.Iterator;
 //Purpose: 
 public class SuperLinkedList extends LinkedList<String> {
     public boolean removeVowels() {
-        Iterator <E> iter  = this.iterator();
+        Iterator <String> iter  = this.iterator();
         boolean torf = false;
         while (iter.hasNext())
         {
-            if(iter.next().equals(A || a || E || e || I || i || O || o || U || u))
+            if("aeiou".indexOf(iter.next().toLowerCase())!=-1)
             {
                 iter.remove();
                 torf = true;
@@ -19,11 +19,11 @@ public class SuperLinkedList extends LinkedList<String> {
     }
 
     public boolean removeConsonants() {
-        Iterator <E> iter  = this.iterator();
+        Iterator <String> iter  = this.iterator();
         boolean torf = false;
         while (iter.hasNext())
         {
-            if(!(iter.next().equals(A || a || E || e || I || i || O || o || U || u)))
+            if("aeiou".indexOf(iter.next().toLowerCase())==-1)
             {
                 iter.remove();
                 torf = true;
@@ -33,11 +33,10 @@ public class SuperLinkedList extends LinkedList<String> {
     }
 
     public LinkedList<String> removeDuplicates() {
-        Iterator <E> iter  = this.iterator();
-        LinkedList <E> a = new LinkedList <E> ();
-        boolean torf;
-        String variable;
-        String last;
+        Iterator <String> iter  = this.iterator();
+        LinkedList <String> a = new LinkedList <String> ();
+        String variable = "";
+        String last = "";
         while(iter.hasNext())
         {
             while(variable.equals(last))
@@ -46,47 +45,48 @@ public class SuperLinkedList extends LinkedList<String> {
             }
             while(iter.hasNext())
             {
-                if(variable = iter.next())
+                if(variable == iter.next())
                 {
-                    last += iter.remove();
+                    last = variable;
+                    iter.remove();
                 }
             }
-            a += last;
+            a.add(last);
         }
         iter  = this.iterator();
         return a;
     }
 
     public LinkedList<String> concatenateStrings() {
-        Iterator <E> iter  = this.iterator();
-        LinkedList <E> a = new LinkedList <E> ();
-        String temp;
-        for(i = 0; i < this.length(); i++)
+        Iterator <String> iter  = this.iterator();
+        LinkedList <String> a = new LinkedList <String> ();
+        String temp = "";
+        for(int i = 0; i < this.size(); i++)
         {
-            for(x = 0; x <= i; x++)
+            for(int x = 0; x <= i; x++)
             {
                 temp += iter.next();
             }
-            a += temp;
+            a.add(temp);
         }
         return a;
     }
 
     public LinkedList<String> mix(LinkedList<String> list2) {
-        Iterator <E> iter  = this.iterator();
-        Iterator <E> ator  = list2.iterator();
-        LinkedList <E> merged = new LinkedList <E> ();
+        Iterator <String> iter  = this.iterator();
+        Iterator <String> ator  = list2.iterator();
+        LinkedList <String> merged = new LinkedList <String> ();
         while(iter.hasNext())
         {
-            merged += iter.next();
-            merged += ator.next();
+            merged.add(iter.next());
+            merged.add(ator.next());
         }
         return merged;
     }
 
     public String toString() {
-        Iterator <E> iter  = this.iterator();
-        String returned;
+        Iterator <String> iter  = this.iterator();
+        String returned = "";
         while(iter.hasNext())
         {
             returned += iter.next();
