@@ -32,6 +32,15 @@ public class SuperLinkedList extends LinkedList<String> {
         return torf;
     }
 
+    public void reset() {
+        Iterator <String> iter = this.iterator();
+        while(iter.hasNext())
+        {
+            iter.next();
+            iter.remove();
+        }
+    }
+
     public LinkedList<String> removeDuplicates() {
         Iterator <String> iter  = this.iterator();
         LinkedList <String> a = new LinkedList <String> ();
