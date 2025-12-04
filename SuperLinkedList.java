@@ -70,12 +70,9 @@ public class SuperLinkedList extends LinkedList<String> {
         Iterator <String> iter  = this.iterator();
         LinkedList <String> a = new LinkedList <String> ();
         String temp = "";
-        for(int i = 0; i < this.size(); i++)
+        while(iter.hasNext())
         {
-            for(int x = 0; x <= i; x++)
-            {
-                temp += iter.next();
-            }
+            temp += iter.next();
             a.add(temp);
         }
         return a;
