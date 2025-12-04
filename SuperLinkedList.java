@@ -2,7 +2,7 @@ import java.util.LinkedList;
 import java.util.Iterator;
 //Name: Meade Havenstein
 //Date and period: 12/1 Pd 6
-//Purpose: 
+//Purpose: Creates 6 new methods to perform actions on a LinkedList using iterators
 public class SuperLinkedList extends LinkedList<String> {
     public boolean removeVowels() {
         Iterator <String> iter  = this.iterator();

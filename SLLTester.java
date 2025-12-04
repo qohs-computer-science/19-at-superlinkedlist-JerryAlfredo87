@@ -161,6 +161,33 @@ class SLLTester {
     System.out.println("List 2 and 3 mixed:");
     System.out.println(list2.mix(list3) + "\n");
 
+    System.out.println("Resetting values of lists...\n");
+    list1.reset();
+    list2.reset();
+    list3.reset();
+    list1.add("b");
+    list2.add("R");
+    list3.add("t");
+    list1.add("b");
+    list2.add("j");
+    list3.add("E");
+    list1.add("b");
+    list2.add("l");
+    list3.add("G");
+    list1.add("i");
+    list2.add("V");
+    list3.add("p");
+    list1.add("O");
+    list2.add("h");
+    list3.add("I");
+
+    System.out.println("List 1:");
+    System.out.println(list1.toString());
+    System.out.println("List 2:");
+    System.out.println(list2.toString());
+    System.out.println("List 3:");
+    System.out.println(list3.toString() + "\n");
+
     System.out.println("That's everything.\n-Meade");
   } // end main
 } // end class
