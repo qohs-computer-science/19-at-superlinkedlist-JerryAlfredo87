@@ -1,6 +1,15 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 
 class SLLTester {
+  public static void printList (LinkedList data)
+    {
+      Iterator <String> iter = data.iterator();
+      while(iter.hasNext())
+      {
+        System.out.println(iter.next());
+      }
+    }
   public static void main(String[] args) {
     SuperLinkedList list1 = new SuperLinkedList();
     SuperLinkedList list2 = new SuperLinkedList();
@@ -140,12 +149,16 @@ class SLLTester {
     System.out.println("List 3:");
     System.out.println(list3.toString() + "\n");
 
-    System.out.println("Concatenating list 1:");
-    System.out.println("Concatenated list 1: " + list1.concatenateStrings());
-    System.out.println("Concatenating list 2:");
-    System.out.println("Concatenated list 2: " + list2.concatenateStrings());
-    System.out.println("Concatenating list 3:");
-    System.out.println("Concatenated list 3: " + list3.concatenateStrings() + "\n");
+    System.out.println("Concatenating list 1...");
+    System.out.println("Concatenated list 1:");
+    printList(list1.concatenateStrings());
+    System.out.println("Concatenating list 2...");
+    System.out.println("Concatenated list 2:");
+    printList(list2.concatenateStrings());
+    System.out.println("Concatenating list 3...");
+    System.out.println("Concatenated list 3:");
+    printList(list3.concatenateStrings());
+    System.out.println();
 
     System.out.println("List 1:");
     System.out.println(list1.toString());
@@ -155,11 +168,12 @@ class SLLTester {
     System.out.println(list3.toString() + "\n");
 
     System.out.println("List 1 and 2 mixed:");
-    System.out.println(list1.mix(list2));
+    printList(list1.mix(list2));
     System.out.println("List 1 and 3 mixed:");
-    System.out.println(list1.mix(list3));
+    printList(list1.mix(list3));
     System.out.println("List 2 and 3 mixed:");
-    System.out.println(list2.mix(list3) + "\n");
+    printList(list2.mix(list3));
+    System.out.println();
 
     System.out.println("Resetting values of lists...\n");
     list1.reset();
